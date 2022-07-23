@@ -8,7 +8,9 @@ RUN apk add --no-cache \
 RUN apk update --no-cache \
   busybox \
   ssl_client \
-  --repository=http://dl-cdn.alpinelinux.org/alpine/edge/community
+  --update-cache \
+  --repository http://dl-cdn.alpinelinux.org/alpine/edge/testing/ \
+  --allow-untrusted
 
 
 COPY jobs /jobs
