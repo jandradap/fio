@@ -5,7 +5,7 @@ RUN apk add --no-cache \
   libaio
 
 #fix cves
-RUN apk add --no-cache \
+RUN apk update --no-cache \
   busybox \
   ssl_client \
   --repository=http://dl-cdn.alpinelinux.org/alpine/edge/community
