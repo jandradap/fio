@@ -8,5 +8,7 @@ RUN microdnf install -y \
   && rpm -ivh https://kojipkgs.fedoraproject.org/packages/fio/3.29/1.fc36/x86_64/fio-engine-libaio-3.29-1.fc36.x86_64.rpm \
   && microdnf clean all
 
+COPY jobs /jobs
+
 ENTRYPOINT ["fio"]
 
