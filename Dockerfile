@@ -4,5 +4,13 @@ RUN apk add --no-cache \
   fio \
   libaio
 
-ENTRYPOINT ["fio"]
+#fix cves
+RUN apk add --no-cache \
+  busybox \
+  ssl_client \
+  --repository=http://dl-cdn.alpinelinux.org/alpine/edge/community
 
+
+COPY jobs /jobs
+
+ENTRYPOINT ["fio"]
